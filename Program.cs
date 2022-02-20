@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Address_Book;
+using ContactsDetails;
+using Address;
 
 namespace OOPS
 { 
@@ -11,14 +12,18 @@ namespace OOPS
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to address Book Program");
-            //Storing 2 Persons details in the list by Console
-            Contacts p1 = new Contacts();
-            p1.AddContact();
-            Contacts p2 = new Contacts();
-            p2.AddContact();
-            List<Contacts> listOfContacts = new List<Contacts>();
-            listOfContacts.Add(p1);
-            listOfContacts.Add(p2);
+            //VARIABLES
+            string choice = string.Empty;
+            Address_Book book = new Address_Book();
+            do
+            {
+                Contacts c =  Contacts.AddContact();
+                book.AddContacts(c);
+                Console.WriteLine("Do u want to add Contacts: - Y or N");
+                choice = Console.ReadLine().ToUpper();
+            } while(choice != "N");
+            book.getContacts();
+                
         }
     }
 }

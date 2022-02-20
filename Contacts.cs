@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Address_Book
+namespace ContactsDetails
 {
     public class Contacts
     {
@@ -16,26 +16,29 @@ namespace Address_Book
         public int zip { get; set; }
         public double phoneNo { get; set; }
         public string eMail { get; set; }
-
-        public void AddContact()
+        
+        public static Contacts AddContact()
         {
+            Contacts C1 = new Contacts();
             Console.Write("Enter first name: ");
-            this.firstName = Console.ReadLine();
+            C1.firstName = Console.ReadLine();
             Console.Write("Enter last name: ");
-            this.lastName = Console.ReadLine();
+            C1.lastName = Console.ReadLine();
             Console.Write("Enter address details: ");
-            this.address = Console.ReadLine();
+            C1.address = Console.ReadLine();
             Console.Write("Enter city name: ");
-            this.city = Console.ReadLine();
+            C1.city = Console.ReadLine();
             Console.Write("Enter state name: ");
-            this.state = Console.ReadLine();
+            C1.state = Console.ReadLine();
             Console.Write("Enter zip Code: ");
-            this.zip = Convert.ToInt32(Console.ReadLine());
+            C1.zip = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter phone Number: ");
-            this.phoneNo = Convert.ToDouble(Console.ReadLine());
+            C1.phoneNo = Convert.ToDouble(Console.ReadLine());
             Console.Write("Ebter your mail Id: ");
-            this.eMail = Console.ReadLine();
-            Console.WriteLine($"Details of{this.firstName} added successfully");
+            C1.eMail = Console.ReadLine();
+            Console.WriteLine($"Details of{C1.firstName} added successfully");
+            return C1;
         }
+        
     }
 }
