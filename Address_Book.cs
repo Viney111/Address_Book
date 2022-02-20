@@ -23,13 +23,25 @@ namespace Address
                 if (existingContact.firstName == firstname)
                 {
                     editedContact = existingContact;
+                    Console.Write("Please enter new email id: ");
+                    editedContact.eMail = Console.ReadLine();
+                    Console.Write("Please enter new Phone Number: ");
+                    editedContact.phoneNo = Convert.ToDouble(Console.ReadLine());
                 }
-
             }
-            Console.Write("Please enter new email id: ");
-            editedContact.eMail = Console.ReadLine();
-            Console.Write("Please enter new Phone Number: ");
-            editedContact.phoneNo = Convert.ToDouble(Console.ReadLine());
+
+        }
+        //For deleting the contact of the person
+        public void deleteContacts(string firstName)
+        {
+
+            foreach (var deletingContact in listOfContacts)
+            {
+                if (deletingContact.firstName == firstName)
+                {
+                    listOfContacts.Remove(deletingContact);
+                }
+            }
         }
         public void getContacts()
         {
