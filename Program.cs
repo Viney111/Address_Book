@@ -17,11 +17,14 @@ namespace OOPS
             Address_Book book = new Address_Book();
             do
             {
-                Contacts c =  Contacts.AddContact();
+                Contacts c =  Contacts.AddContactFromConsole();
                 book.AddContacts(c);
                 Console.WriteLine("Do u want to add Contacts: - Y or N");
                 choice = Console.ReadLine().ToUpper();
             } while(choice != "N");
+            Console.WriteLine("Please enter name of the person for whom u want to edit details: ");
+            string nameofEditContact = Console.ReadLine();
+            book.editContacts(nameofEditContact);
             book.getContacts();
                 
         }

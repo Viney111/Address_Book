@@ -14,13 +14,29 @@ namespace Address
         {
             listOfContacts.Add(c);
         }
+        //For editing the contact of the person
+        public void editContacts(string firstname)
+        {
+            Contacts editedContact = null;
+            foreach (var existingContact in listOfContacts)
+            {
+                if (existingContact.firstName == firstname)
+                {
+                    editedContact = existingContact;
+                }
+
+            }
+            Console.Write("Please enter new email id: ");
+            editedContact.eMail = Console.ReadLine();
+            Console.Write("Please enter new Phone Number: ");
+            editedContact.phoneNo = Convert.ToDouble(Console.ReadLine());
+        }
         public void getContacts()
         {
             foreach (var v in listOfContacts)
             {
-                Console.WriteLine($"First Name is {v.firstName}\nLast name is {v.lastName}\nPhone Number is {v.phoneNo}");
+                Console.WriteLine($"Mail Id is {v.eMail}\nPhone Number is {v.phoneNo}");
             }
         }
-        
     }
 }

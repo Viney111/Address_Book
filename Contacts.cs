@@ -17,7 +17,7 @@ namespace ContactsDetails
         public double phoneNo { get; set; }
         public string eMail { get; set; }
         
-        public static Contacts AddContact()
+        public static Contacts AddContactFromConsole()
         {
             Contacts C1 = new Contacts();
             Console.Write("Enter first name: ");
@@ -36,7 +36,7 @@ namespace ContactsDetails
             C1.phoneNo = Convert.ToDouble(Console.ReadLine());
             Console.Write("Ebter your mail Id: ");
             C1.eMail = Console.ReadLine();
-            Console.WriteLine($"Details of{C1.firstName} added successfully");
+            Console.WriteLine($"Details of {C1.firstName} added successfully");
             return C1;
         }
         
