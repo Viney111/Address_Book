@@ -29,8 +29,8 @@ namespace Address
                     editedContact.phoneNo = Convert.ToDouble(Console.ReadLine());
                 }
             }
-
         }
+
         //For deleting the contact of the person
         public void deleteContacts(string firstName)
         {
@@ -53,7 +53,7 @@ namespace Address
         {
             foreach (var v in listOfContacts)
             {
-                Console.WriteLine($"Mail Id is {v.eMail}\nPhone Number is {v.phoneNo}");
+                Console.WriteLine($"Full Name of the contact is {v.firstName + " " + v.lastName}\nAddress of Contact is {v.address +","+ v.city + "," + v.state + ",zip:" + v.zip}.\nMail Id is {v.eMail}\nPhone Number is {v.phoneNo}");
             }
         }
     }
