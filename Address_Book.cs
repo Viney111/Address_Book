@@ -34,13 +34,19 @@ namespace Address
         //For deleting the contact of the person
         public void deleteContacts(string firstName)
         {
+            Contacts Contact = null;
 
             foreach (var deletingContact in listOfContacts)
             {
                 if (deletingContact.firstName == firstName)
                 {
-                    listOfContacts.Remove(deletingContact);
+                    Contact = deletingContact;
                 }
+            }
+            
+            if (Contact != null)
+            {
+                listOfContacts.Remove(Contact);
             }
         }
         public void getContacts()
