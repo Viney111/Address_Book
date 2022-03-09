@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactsDetails
 {
-    public class Contacts
+    internal class Contacts
     {
         public string firstName { get; set; }
         public string lastName { get; set; }
